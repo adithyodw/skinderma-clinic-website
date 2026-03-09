@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CLINIC_PHONE, getWhatsAppUrl } from '@/lib/data';
+import { useLang } from '@/contexts/LanguageContext';
 
 const NAV_LINKS = [
   { href: '/', label: 'Home', labelId: 'Beranda' },
@@ -20,6 +21,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
+  const { lang, setLang } = useLang();
 
   // Transparent header only on home page when not scrolled
   const isHomePage = pathname === '/';
@@ -159,7 +161,7 @@ export default function Header() {
                         : 'text-white/80 hover:text-white'
                   }`}
                 >
-                  {link.label}
+                  {lang === 'id' ? link.labelId : link.label}
                   <span
                     className={`absolute bottom-1 left-4 right-4 h-px rounded-full transition-all duration-200 ${
                       isActive(link.href)
@@ -173,6 +175,17 @@ export default function Header() {
 
             {/* CTA */}
             <div className="hidden lg:flex items-center gap-3">
+              <button
+                onClick={() => setLang(lang === 'en' ? 'id' : 'en')}
+                className={`text-xs font-semibold tracking-wider px-3 py-1.5 rounded-full border transition-all duration-200 ${
+                  scrolled
+                    ? 'border-gray-200 text-gray-600 hover:border-primary-400 hover:text-primary-600'
+                    : 'border-white/30 text-white/80 hover:border-white hover:text-white'
+                }`}
+                aria-label="Toggle language"
+              >
+                {lang === 'en' ? 'ID' : 'EN'}
+              </button>
               <a
                 href={getWhatsAppUrl()}
                 target="_blank"
