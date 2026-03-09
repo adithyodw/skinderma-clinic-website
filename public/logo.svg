@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <!-- Mark: abstract leaf/diamond motif -->
+  <g transform="translate(0, 4)">
+    <!-- Outer diamond ring -->
+    <path d="M36 4 L56 36 L36 68 L16 36 Z" stroke="#0D7377" stroke-width="1.5" fill="none" opacity="0.35"/>
+    <!-- Inner leaf forms -->
+    <path d="M36 14 C36 14 50 28 50 36 C50 44 36 58 36 58 C36 58 22 44 22 36 C22 28 36 14 36 14 Z" fill="#0D7377" opacity="0.12"/>
+    <path d="M36 18 C42 26 46 31 46 36 C46 41 42 46 36 54 C30 46 26 41 26 36 C26 31 30 26 36 18 Z" fill="#0D7377" opacity="0.25"/>
+    <!-- Gold accent line -->
+    <line x1="36" y1="24" x2="36" y2="48" stroke="#C9A961" stroke-width="1" opacity="0.7"/>
+    <line x1="28" y1="36" x2="44" y2="36" stroke="#C9A961" stroke-width="1" opacity="0.7"/>
+    <!-- Center dot -->
+    <circle cx="36" cy="36" r="2.5" fill="#0D7377"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="72" y="38" font-family="'Playfair Display', 'Georgia', serif" font-size="22" font-weight="600" letter-spacing="3" fill="#1A1A1A">SKINDERMA</text>
+
+  <!-- Divider line -->
+  <line x1="72" y1="45" x2="308" y2="45" stroke="#C9A961" stroke-width="0.75" opacity="0.8"/>
+
+  <!-- Subtitle -->
+  <text x="72" y="60" font-family="'Inter', 'Arial', sans-serif" font-size="8.5" font-weight="400" letter-spacing="4.5" fill="#525252">AESTHETIC CLINIC</text>
+</svg>
