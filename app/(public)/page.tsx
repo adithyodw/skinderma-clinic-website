@@ -337,7 +337,7 @@ export default function HomePage() {
         </div>
         <div className="relative min-h-[380px] lg:min-h-0 overflow-hidden">
           <Image
-            src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800"
+            src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&auto=format&fit=crop"
             alt="Skinderma Aesthetic Clinic"
             fill
             className="object-cover"

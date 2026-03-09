@@ -42,12 +42,11 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-6">
               <Image
-                src="/Logo Skinderma.jpg"
+                src="/logo.svg"
                 alt="Skinderma Aesthetic Clinic"
                 width={150}
                 height={56}
                 className="h-12 w-auto brightness-0 invert"
-                unoptimized
               />
             </Link>
             <p className="text-xs font-semibold tracking-widest text-accent-400 uppercase mb-4">

@@ -23,19 +23,11 @@ export default function Header() {
   const pathname = usePathname();
   const { lang, setLang } = useLang();
 
-  // Transparent header only on home page when not scrolled
-  const isHomePage = pathname === '/';
-
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
-    // On non-home pages, always treat as scrolled
-    if (!isHomePage) {
-      setScrolled(true);
-      return;
-    }
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isHomePage]);
+  }, []);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -133,15 +125,14 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
               <Image
-                src="/Logo Skinderma.jpg"
+                src="/logo.svg"
                 alt="Skinderma Aesthetic Clinic"
                 width={160}
                 height={60}
                 className={`h-12 w-auto transition-all duration-300 ${
-                  scrolled ? 'mix-blend-multiply' : 'brightness-0 invert opacity-95'
+                  scrolled ? '' : 'brightness-0 invert opacity-95'
                 }`}
                 priority
-                unoptimized
               />
             </Link>
 
@@ -249,12 +240,11 @@ export default function Header() {
             >
               <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100">
                 <Image
-                  src="/Logo Skinderma.jpg"
+                  src="/logo.svg"
                   alt="Skinderma Aesthetic Clinic"
                   width={120}
                   height={45}
-                  className="h-10 w-auto mix-blend-multiply"
-                  unoptimized
+                  className="h-10 w-auto"
                 />
                 <button
                   onClick={() => setMobileOpen(false)}

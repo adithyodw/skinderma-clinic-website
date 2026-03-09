@@ -79,7 +79,7 @@ export default function AboutClient() {
               variants={fadeInUp}
               className="font-playfair text-4xl md:text-6xl text-white leading-tight"
             >
-              Skinderma Aesthetic Clinic
+              Founded on a Mission to Elevate Aesthetic Medicine in Batam
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-white/50 text-sm tracking-widest">
               Batam Acne &amp; Melasma Centre &middot; Est. 2021
@@ -129,7 +129,7 @@ export default function AboutClient() {
             >
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-luxury-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800"
+                  src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=1200&auto=format&fit=crop"
                   alt="Skinderma Aesthetic Clinic"
                   fill
                   className="object-cover"

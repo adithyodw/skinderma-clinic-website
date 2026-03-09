@@ -29,8 +29,8 @@ const EXTRA_POSTS: BlogPost[] = [
     content: '',
     contentId: '',
     coverImage: 'https://images.unsplash.com/photo-1556228841-a3c527ebefe5?w=800',
-    author: 'dr. Michael Tanoto',
-    authorPhoto: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=100',
+    author: 'dr. Yeyen Handoko',
+    authorPhoto: '/yeyen.jpg',
     category: 'skincare-tips',
     tags: ['skincare', 'routine', 'beginners'],
     readTime: 6,
@@ -51,8 +51,8 @@ const EXTRA_POSTS: BlogPost[] = [
     content: '',
     contentId: '',
     coverImage: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800',
-    author: 'dr. Sarah Amalia',
-    authorPhoto: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100',
+    author: 'dr. Yeyen Handoko',
+    authorPhoto: '/yeyen.jpg',
     category: 'before-after',
     tags: ['laser', 'transformation', 'before-after'],
     readTime: 4,
@@ -64,7 +64,7 @@ const EXTRA_POSTS: BlogPost[] = [
   {
     id: '6',
     slug: 'skinderma-new-treatments-2025',
-    title: 'SkinDerma Launches 3 New Aesthetic Treatments for 2025',
+    title: 'Skinderma Launches 3 New Aesthetic Treatments for 2025',
     titleId: 'SkinDerma Meluncurkan 3 Perawatan Estetika Baru untuk 2025',
     excerpt:
       'We\'re excited to announce three cutting-edge treatments now available at SkinDerma Batam: Morpheus8, Profhilo, and Exosome Therapy.',
@@ -73,8 +73,8 @@ const EXTRA_POSTS: BlogPost[] = [
     content: '',
     contentId: '',
     coverImage: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800',
-    author: 'dr. Sarah Amalia',
-    authorPhoto: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100',
+    author: 'dr. Yeyen Handoko',
+    authorPhoto: '/yeyen.jpg',
     category: 'news',
     tags: ['news', 'new treatments', '2025'],
     readTime: 3,
@@ -95,8 +95,8 @@ const EXTRA_POSTS: BlogPost[] = [
     content: '',
     contentId: '',
     coverImage: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800',
-    author: 'dr. Michael Tanoto',
-    authorPhoto: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=100',
+    author: 'dr. Yeyen Handoko',
+    authorPhoto: '/yeyen.jpg',
     category: 'lifestyle',
     tags: ['lifestyle', 'self-care', 'wellness'],
     readTime: 5,
@@ -269,20 +269,24 @@ export default function BlogPage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="bg-gradient-to-b from-gray-50 to-white py-20 border-b border-gray-100">
-        <div className="container-custom text-center">
+      <section className="bg-dark pt-28 pb-16 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none opacity-10">
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(ellipse_at_top_right,_#0D7377_0%,_transparent_60%)]" />
+        </div>
+        <div className="container-custom text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="badge-primary mb-4 inline-block">Our Blog</span>
-            <h1 className="font-playfair text-4xl md:text-5xl font-bold text-dark mb-4">
-              SkinDerma Blog
+            <span className="inline-block text-accent-400 text-xs font-semibold tracking-widest uppercase mb-5">
+              Medical Journal
+            </span>
+            <h1 className="font-playfair text-4xl md:text-5xl text-white mb-4">
+              Skinderma Journal
             </h1>
-            <p className="text-dark-600 text-lg max-w-xl mx-auto">
-              Expert insights on skincare &amp; aesthetic treatments — written by our certified
-              doctors.
+            <p className="text-white/60 text-lg max-w-xl mx-auto leading-relaxed">
+              Expert insights on skincare and aesthetic treatments — written by dr. Yeyen Handoko.
             </p>
           </motion.div>
 

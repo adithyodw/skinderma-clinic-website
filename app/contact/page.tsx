@@ -67,9 +67,9 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen pt-24 overflow-x-hidden">
+      <main className="min-h-screen overflow-x-hidden">
         {/* ── HERO ──────────────────────────────────────────────────────── */}
-        <section className="bg-dark py-20 relative overflow-hidden">
+        <section className="bg-dark pt-28 pb-16 relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-0 left-0 w-1/2 h-full opacity-10 bg-[radial-gradient(ellipse_at_top_left,_#0D7377_0%,_transparent_60%)]" />
           </div>
