@@ -135,7 +135,7 @@ export default function AppointmentsPage() {
                 </div>
                 <div className="min-w-0">
                   <p className="font-semibold text-dark text-sm group-hover:text-primary-700 transition-colors truncate">{p.name}</p>
-                  <p className="text-xs text-gray-400 mt-0.5">{p.duration} &bull; From Rp {p.priceFrom.toLocaleString()}</p>
+                  <p className="text-xs text-gray-400 mt-0.5">{p.duration}{p.priceFrom ? ` \u2022 From Rp ${p.priceFrom.toLocaleString()}` : ''}</p>
                 </div>
                 <svg className="w-4 h-4 text-gray-300 group-hover:text-primary-400 flex-shrink-0 ml-auto transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
