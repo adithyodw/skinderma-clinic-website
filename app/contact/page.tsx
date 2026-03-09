@@ -44,6 +44,7 @@ export default function ContactPage() {
     language: 'en' as 'en' | 'id',
   });
   const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -58,10 +59,19 @@ export default function ContactPage() {
       return;
     }
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 1200));
-    toast.success('Your message has been sent! We will respond within 24 hours.');
-    setForm({ name: '', email: '', phone: '', subject: '', message: '', language: 'en' });
-    setSubmitting(false);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error('Failed');
+      setSubmitted(true);
+    } catch {
+      toast.error('Something went wrong. Please try WhatsApp or email us directly.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -251,6 +261,26 @@ export default function ContactPage() {
               </p>
             </div>
 
+            {submitted ? (
+              <div className="text-center py-16 px-8 bg-primary-50 rounded-2xl border border-primary-100">
+                <div className="w-16 h-16 rounded-full bg-primary-600 flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3 className="font-playfair text-2xl text-dark mb-3">Message Received</h3>
+                <p className="text-gray-500 text-sm leading-relaxed max-w-sm mx-auto mb-6">
+                  Thank you, <span className="font-semibold text-dark">{form.name || 'there'}</span>. Your enquiry has been sent to our team. We will respond within 24 hours during clinic hours.
+                </p>
+                <p className="text-xs text-gray-400 mb-8">For urgent matters, please contact us directly via WhatsApp.</p>
+                <button
+                  onClick={() => { setSubmitted(false); setForm({ name: '', email: '', phone: '', subject: '', message: '', language: 'en' }); }}
+                  className="px-8 py-3 rounded-xl border-2 border-primary-300 text-primary-700 font-semibold text-sm hover:bg-primary-100 transition-colors"
+                >
+                  Send Another Message
+                </button>
+              </div>
+            ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
@@ -365,6 +395,7 @@ export default function ContactPage() {
                 {submitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
+            )}
           </div>
         </section>
 

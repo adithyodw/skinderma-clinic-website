@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CLINIC_PHONE, getWhatsAppUrl } from '@/lib/data';
+import { CLINIC_PHONE, CLINIC_TIKTOK, getWhatsAppUrl } from '@/lib/data';
 import { useLang } from '@/contexts/LanguageContext';
 
 const NAV_LINKS = [
@@ -105,6 +105,17 @@ export default function Header() {
                   }`}
                 >
                   <FacebookIcon className="w-3.5 h-3.5" />
+                </a>
+                <a
+                  href={CLINIC_TIKTOK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="TikTok"
+                  className={`transition-colors ${
+                    scrolled ? 'text-gray-400 hover:text-primary-600' : 'text-white/60 hover:text-white'
+                  }`}
+                >
+                  <TikTokIcon className="w-3.5 h-3.5" />
                 </a>
                 <Link
                   href="/patient-portal/login"
@@ -304,6 +315,14 @@ export default function Header() {
                   >
                     <FacebookIcon className="w-5 h-5" />
                   </a>
+                  <a
+                    href={CLINIC_TIKTOK}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-primary-600 transition-colors"
+                  >
+                    <TikTokIcon className="w-5 h-5" />
+                  </a>
                 </div>
               </div>
             </motion.div>
@@ -352,6 +371,14 @@ function XIcon({ className }: { className?: string }) {
   return (
     <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  );
+}
+
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+      <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.89a8.18 8.18 0 004.78 1.52V7.01a4.85 4.85 0 01-1.01-.32z" />
     </svg>
   );
 }

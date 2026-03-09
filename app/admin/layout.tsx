@@ -15,10 +15,12 @@ import {
   Bars3Icon,
   XMarkIcon,
   SparklesIcon,
+  UsersIcon,
 } from '@heroicons/react/24/outline';
 
 const NAV_ITEMS = [
   { href: '/admin/dashboard', label: 'Dashboard', icon: HomeIcon },
+  { href: '/admin/patients', label: 'Patients', icon: UsersIcon },
   { href: '/admin/blog', label: 'Blog Posts', icon: DocumentTextIcon },
   { href: '/admin/products', label: 'Products', icon: ShoppingBagIcon },
   { href: '/admin/gallery', label: 'Gallery', icon: PhotoIcon },

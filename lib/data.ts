@@ -17,6 +17,7 @@ export const CLINIC_ADDRESS_BATU_AJI = 'Ruko Buana Mas 2 No. 22, Tembesi, Batu A
 export const CLINIC_GMAPS = 'https://maps.google.com/?q=Skinderma+Aesthetic+Clinic+Batam';
 export const CLINIC_INSTAGRAM = 'https://www.instagram.com/skindermaclinic/';
 export const CLINIC_FACEBOOK = 'https://www.facebook.com/skindermaclinicbatam/';
+export const CLINIC_TIKTOK = 'https://www.tiktok.com/@skinderma';
 
 export function getWhatsAppUrl(message?: string) {
   const text = encodeURIComponent(
@@ -726,7 +727,7 @@ export const FEATURED_PRODUCTS: Product[] = [
       'A physician-formulated retinol night treatment using microencapsulated retinol for sustained, gentle release throughout the night. Clinically shown to reduce fine lines, accelerate cell turnover, refine skin texture, and improve the appearance of acne scars and post-inflammatory hyperpigmentation over time.',
     descriptionId:
       'Perawatan malam retinol yang diformulasikan dokter menggunakan retinol terenkapsulasi mikro untuk pelepasan bertahap dan lembut sepanjang malam. Terbukti secara klinis mengurangi garis halus, mempercepat pergantian sel, dan memperbaiki bekas jerawat.',
-    images: ['https://images.unsplash.com/photo-1556228841-a3c527ebefe5?w=400'],
+    images: ['https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400&auto=format&fit=crop'],
     priceIdr: 320000,
     priceSgd: 32,
     priceMyr: 95,

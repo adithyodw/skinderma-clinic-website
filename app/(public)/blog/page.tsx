@@ -14,6 +14,8 @@ import {
 } from '@heroicons/react/24/outline';
 import { FEATURED_BLOG_POSTS } from '@/lib/data';
 import { BlogPost, BlogCategory } from '@/lib/types';
+import { db } from '@/lib/firebase';
+import { collection, addDoc, serverTimestamp, query, where, getDocs } from 'firebase/firestore';
 
 // ── Additional mock posts ────────────────────────────────────────────────────
 const EXTRA_POSTS: BlogPost[] = [
@@ -259,10 +261,23 @@ export default function BlogPage() {
   const visible = filtered.slice(0, visibleCount);
   const hasMore = visibleCount < filtered.length;
 
-  function handleNewsletterSubmit(e: React.FormEvent) {
+  async function handleNewsletterSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (newsletterEmail.trim()) {
+    const email = newsletterEmail.trim().toLowerCase();
+    if (!email) return;
+    try {
+      // Check for duplicates
+      const existing = await getDocs(query(collection(db, 'newsletterSubscribers'), where('email', '==', email)));
+      if (existing.empty) {
+        await addDoc(collection(db, 'newsletterSubscribers'), {
+          email,
+          subscribedAt: serverTimestamp(),
+          source: 'blog-page',
+        });
+      }
       setNewsletterSubmitted(true);
+    } catch {
+      setNewsletterSubmitted(true); // still show success to user
     }
   }
 
